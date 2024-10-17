@@ -3,7 +3,7 @@ package com.ramirolandajo.tarot.models;
 import lombok.Getter;
 
 @Getter
-public enum TarotCard {
+public enum ETarotCard {
     THE_FOOL(0.75, "/images/THE_FOOL.png"),
     THE_MAGICIAN(0.7, "/images/THE_MAGICIAN.png"),
     THE_HIGH_PRIESTESS(0.65, "/images/THE_HIGH_PRIESTESS.png"),
@@ -27,11 +27,13 @@ public enum TarotCard {
     JUDGEMENT(0.5, "/images/JUDGEMENT.png"),
     THE_WORLD(0.8, "/images/THE_WORLD.png");
 
-    private final double chance;
+    private final double randomness;
     private final String imagePath;
 
-    TarotCard(double chance, String imagePath) {
-        this.chance = chance;
+    ETarotCard(double randomness, String imagePath) {
+        this.randomness = randomness;
         this.imagePath = imagePath;
     }
+
+
 }

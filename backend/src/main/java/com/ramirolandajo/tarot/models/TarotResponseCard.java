@@ -1,13 +1,14 @@
 package com.ramirolandajo.tarot.models;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class TarotResponseCard {
-    private TarotCard tarotCard;
+    private ETarotCard tarotCard;
     private String message;
-
-    //modificar constructor para que genere una carta random
 }
