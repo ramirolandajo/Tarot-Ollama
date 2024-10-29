@@ -44,11 +44,17 @@ public class TarotService {
         String host = "http://localhost:11434/";
         OllamaAPI ollamaAPI = new OllamaAPI(host);
         ollamaAPI.setRequestTimeoutSeconds(40);
+
         try {
+            String prompt = "Give me a tarot reading based on the card: " + card.name() +
+                    ". Please follow the structure of Card Meaning, Effect on the Week, and Daily Suggestion." +
+                    "Keep it under 150 words. Avoid responding with phrases like 'Here is what I understand...'" +
+                    " and such.";
+
             OllamaResult result =
                     ollamaAPI.generate(
                             "llama3.2:1b",
-                            "do a reading based on the tarot card: " + card.name() + ". Keep it to under 50 words.",
+                            prompt,
                             true,
                             new OptionsBuilder().build()
                     );

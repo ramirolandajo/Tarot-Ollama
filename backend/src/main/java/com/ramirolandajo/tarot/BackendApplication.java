@@ -14,7 +14,7 @@ public class BackendApplication {
         String host = "http://localhost:11434/";
         OllamaAPI ollamaAPI = new OllamaAPI(host);
         try {
-            ollamaAPI.createModelWithModelFileContents("tarot", "FROM llama3.2:1b\nPARAMETER temperature 0.85\nPARAMETER num_ctx 2048\nSYSTEM You are a tarot card reader and zodiac expert. Your job is to interpret tarot cards and give insightful readings, incorporating zodiac knowledge when relevant. Given a card the user will input, give a reading incorporating things about how the users future (for example his week) will be like based on the card. Your response must be first describing what the card represents, secondly how it may affect the users week, and lastly, something creative about the card.");
+            ollamaAPI.createModelWithFilePath("tarot", "/modelfile");
         } catch (Exception e) {
             e.printStackTrace();
         }
